@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      POC on DOCs
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <p>Download and show RTF file using DocumentViewer plugin</p>
+  <button color="primary" ion-button block icon-start (click)="downloadAndOpenPdf()">
+    <ion-icon name="book"></ion-icon>
+    Open PDF
+  </button>
+
+  <!-- <p>Download and show RTF file using fileOpener plugin</p>
+  <button color="primary" ion-button block icon-start (click)="openPDFWithFileOpener()">
+    <ion-icon name="document"></ion-icon>
+    Download and open PDF
+  </button> -->
+
+  <p>Download and show RTF file using DocumentViewer plugin</p>
+  <button color="primary" ion-button block icon-start (click)="openWithFileOpener()">
+    <ion-icon name="document"></ion-icon>
+    Download and open RTF
+  </button>
+
+  <p>Download and show PDF file using FileOpener plugin with progress bar</p>
+  <div class="note">Note: Before run this function, Please replace with valid Bearer Token</div>
+  <button color="secondary" ion-button block icon-start (click)="downloadWithToken()">
+    <ion-icon name="document"></ion-icon>
+    Download Using Token
+  </button>
+
+  <div class="progress-outer" *ngIf="progress>=0 && progress<100">
+    <div class="progress-inner" [style.width]="progress + '%'">
+      {{progress}}%
+    </div>
+  </div>
+
+  
+  <p>Download and show PDF file using FileOpener plugin</p>
+  <button color="secondary" ion-button block icon-start (click)="downloadMyPDF()">
+    <ion-icon name="document"></ion-icon>
+    Download PDF
+  </button>
+</ion-content>
